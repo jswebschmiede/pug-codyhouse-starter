@@ -1,0 +1,13 @@
+doctype html
+html(lang='en')
+    head
+        block head
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='css/stlyes.css')
+        script(src='js/script.min.js', defer)
+    body
+        #page.site
+            #content.site-content
+                block content
+
+            include includes/footer.pug
