@@ -4,6 +4,7 @@ import babel from "gulp-babel";
 import concat from "gulp-concat";
 import uglify from "gulp-uglify";
 import purgecss from "gulp-purgecss";
+import sassGlob from "gulp-sass-glob-use-forward";
 import { deleteAsync } from "del";
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
@@ -77,6 +78,7 @@ const browserSyncReload = (cb) => {
 const scssTask = async () => {
   return src(files.scssPath.src)
     .pipe(gulpMode.development(sourcemaps.init()))
+    .pipe(sassGlob({ sassModules: true }))
     .pipe(
       sass({
         outputStyle: "compressed",
@@ -118,7 +120,7 @@ const jsTask = async () => {
 
 // HTML Task
 const htmlTask = async () => {
-  return src("assets/pug/views/*.pug", { since: lastRun(htmlTask) })
+  return src("assets/pug/views/*.pug")
     .pipe(pug({ pretty: true }))
     .pipe(dest("dist"));
 };

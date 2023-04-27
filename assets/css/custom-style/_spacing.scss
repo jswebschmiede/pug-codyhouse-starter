@@ -1,0 +1,50 @@
+@use '../base' as *;
+
+// --------------------------------
+
+// (START) Global editor code https://codyhouse.co/ds/globals/spacing
+
+// --------------------------------
+
+:root {
+  --space-unit: 1rem;
+}
+
+:root, * {
+  --space-xxxxs: calc(0.09 * var(--space-unit));
+  --space-xxxs: calc(0.146 * var(--space-unit));
+  --space-xxs: calc(0.236 * var(--space-unit));
+  --space-xs: calc(0.382 * var(--space-unit));
+  --space-sm: calc(0.618 * var(--space-unit));
+  --space-md: calc(1 * var(--space-unit));
+  --space-lg: calc(1.618 * var(--space-unit));
+  --space-xl: calc(2.618 * var(--space-unit));
+  --space-xxl: calc(4.236 * var(--space-unit));
+  --space-xxxl: calc(6.854 * var(--space-unit));
+  --space-xxxxl: calc(11.08 * var(--space-unit));
+  --component-padding: var(--space-md);
+}
+
+@supports(--css: variables) {
+  @include breakpoint(md) {
+    :root, * {
+      --space-xxxxs: calc(0.1875 * var(--space-unit));
+      --space-xxxs: calc(0.375 * var(--space-unit));
+      --space-xxs: calc(0.5625 * var(--space-unit));
+      --space-xs: calc(0.75 * var(--space-unit));
+      --space-sm: calc(1.125 * var(--space-unit));
+      --space-md: calc(2 * var(--space-unit));
+      --space-lg: calc(3.125 * var(--space-unit));
+      --space-xl: calc(5.125 * var(--space-unit));
+      --space-xxl: calc(8.25 * var(--space-unit));
+      --space-xxxl: calc(13.25 * var(--space-unit));
+      --space-xxxxl: calc(21.5 * var(--space-unit));
+    }
+  }
+}
+
+// --------------------------------
+
+// (END) Global editor code
+
+// --------------------------------
